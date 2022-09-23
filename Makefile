@@ -33,6 +33,8 @@ dc_down:
 dc_restart:
 	make dc_stop dc_start
 
+d_prune:
+	docker container prune
 
 ##################
 # App
