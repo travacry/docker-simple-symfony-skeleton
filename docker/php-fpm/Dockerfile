@@ -4,7 +4,7 @@ FROM php:8.1.0-fpm-alpine
 RUN apk add --no-cache curl git build-base zlib-dev oniguruma-dev autoconf bash
 
 # Xdebug
-ARG INSTALL_XDEBUG=false
+ARG INSTALL_XDEBUG=true
 RUN if [ ${INSTALL_XDEBUG} = true ]; \
     then \
       pecl install xdebug && docker-php-ext-enable xdebug; \
