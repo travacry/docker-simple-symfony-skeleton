@@ -12,6 +12,9 @@ DOCKER_COMPOSE_PHP_FPM_EXEC = ${DOCKER_COMPOSE} exec -u www-data php-fpm
 dc_build:
 	${DOCKER_COMPOSE} build
 
+dc_build_nc:
+	${DOCKER_COMPOSE} build --no-cache
+
 dc_start:
 	${DOCKER_COMPOSE} start
 
@@ -35,6 +38,15 @@ dc_restart:
 
 d_prune:
 	docker container prune
+
+#Stop all running containers:
+#docker stop $(docker ps -a -q)
+
+#Delete all stopped containers:
+#docker rm $(docker ps -a -q)
+
+#To remove all images there is a simple command to do that.
+#docker rmi $(docker images -q)
 
 ##################
 # App
